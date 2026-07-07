@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiosco solar de salud · Comarca Ngäbe Buglé</title>
+<meta name="description" content="Propuesta conceptual de un kiosco de salud autónomo, solar y con conectividad satelital para apoyar el diagnóstico temprano de enfermedades en la Comarca Ngäbe Buglé, Panamá.">
+
+<!-- Tipografías: Bricolage (display), IBM Plex Sans (cuerpo), IBM Plex Mono (datos) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- ============ NAVEGACIÓN ============ -->
+<header class="site-header" id="top">
+  <nav class="nav" aria-label="Navegación principal">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34">
+          <circle cx="20" cy="14" r="8" fill="var(--solar)"></circle>
+          <g stroke="var(--solar)" stroke-width="2" stroke-linecap="round">
+            <line x1="20" y1="1" x2="20" y2="4"></line>
+            <line x1="33" y1="14" x2="36" y2="14"></line>
+            <line x1="4" y1="14" x2="7" y2="14"></line>
+            <line x1="29.5" y1="4.5" x2="31.5" y2="2.5"></line>
+            <line x1="8.5" y1="4.5" x2="6.5" y2="2.5"></line>
+          </g>
+          <rect x="10" y="24" width="20" height="13" rx="2" fill="var(--petrol)"></rect>
+          <rect x="13" y="27" width="14" height="7" rx="1" fill="var(--paper)"></rect>
+        </svg>
+      </span>
+      <span class="brand-text">Kiosco solar de salud</span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#problema">El problema</a></li>
+      <li><a href="#propuesta">La propuesta</a></li>
+      <li><a href="#funcionamiento">Cómo funciona</a></li>
+      <li><a href="#comparativa">Tecnologías</a></li>
+      <li><a href="#costos">Costos</a></li>
+      <li><a href="#alcance">Límites</a></li>
+      <li><a href="#equipo">Equipo</a></li>
+      <li><a href="#etica">Ética</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenido">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Propuesta universitaria · Comarca Ngäbe Buglé, Panamá</p>
+      <h1>Un kiosco solar para acercar la primera orientación médica a comunidades de difícil acceso.</h1>
+      <p class="hero-lead">En muchas comunidades de la comarca, llegar a un centro de salud puede tomar horas o incluso días. Este proyecto propone un kiosco autónomo que mide signos vitales, escucha los síntomas del paciente y ofrece una orientación clínica preliminar, con energía solar y conexión satelital.</p>
+      <p class="hero-note"><strong>Es una propuesta de diseño, no un producto terminado.</strong> Apoya la detección temprana y sirve de puente hacia el personal médico. No reemplaza al médico ni entrega un diagnóstico definitivo.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#propuesta">Ver la propuesta</a>
+        <a class="btn btn-ghost" href="#problema">Conocer el problema</a>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 340 360" class="kiosk-illustration" role="img">
+        <!-- sol -->
+        <circle cx="270" cy="66" r="30" fill="var(--solar)"></circle>
+        <g stroke="var(--solar)" stroke-width="4" stroke-linecap="round" opacity="0.9">
+          <line x1="270" y1="18" x2="270" y2="6"></line>
+          <line x1="270" y1="126" x2="270" y2="114"></line>
+          <line x1="318" y1="66" x2="330" y2="66"></line>
+          <line x1="210" y1="66" x2="222" y2="66"></line>
+          <line x1="304" y1="32" x2="313" y2="23"></line>
+          <line x1="227" y1="100" x2="236" y2="91"></line>
+          <line x1="304" y1="100" x2="313" y2="109"></line>
+          <line x1="227" y1="32" x2="236" y2="41"></line>
+        </g>
+        <!-- antena satelital -->
+        <g>
+          <line x1="60" y1="150" x2="60" y2="120" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"></line>
+          <ellipse cx="52" cy="112" rx="26" ry="15" fill="var(--teal)" transform="rotate(-24 52 112)"></ellipse>
+          <circle cx="52" cy="112" r="4" fill="var(--paper)"></circle>
+        </g>
+        <!-- panel solar -->
+        <g>
+          <rect x="150" y="96" width="118" height="66" rx="4" fill="var(--petrol)" transform="skewX(-8)"></rect>
+          <g stroke="var(--teal)" stroke-width="2" opacity="0.7" transform="skewX(-8)">
+            <line x1="150" y1="118" x2="268" y2="118"></line>
+            <line x1="150" y1="140" x2="268" y2="140"></line>
+            <line x1="180" y1="96" x2="180" y2="162"></line>
+            <line x1="210" y1="96" x2="210" y2="162"></line>
+            <line x1="240" y1="96" x2="240" y2="162"></line>
+          </g>
+          <line x1="180" y1="162" x2="180" y2="188" stroke="var(--ink)" stroke-width="5"></line>
+        </g>
+        <!-- cabina del kiosco -->
+        <rect x="96" y="186" width="150" height="150" rx="10" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="3"></rect>
+        <!-- pantalla -->
+        <rect x="116" y="206" width="110" height="72" rx="6" fill="var(--petrol)"></rect>
+        <path d="M126 258 l14 -20 l12 14 l16 -26 l14 22 l12 -10" fill="none" stroke="var(--solar)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+        <circle cx="171" cy="222" r="5" fill="var(--clay)"></circle>
+        <!-- banda dientes ngäbe en la base -->
+        <path class="teeth" d="M108 300 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12" fill="none" stroke="var(--clay)" stroke-width="3" stroke-linejoin="round"></path>
+        <rect x="120" y="312" width="46" height="16" rx="3" fill="var(--teal)"></rect>
+        <rect x="176" y="312" width="46" height="16" rx="3" fill="var(--solar)"></rect>
+      </svg>
+      <p class="hero-caption">Diagrama ilustrativo del concepto: energía solar, procesamiento local y enlace satelital en una sola unidad.</p>
+    </div>
+  </div>
+  <div class="teeth-band" aria-hidden="true"></div>
+</section>
+
+<!-- ============ 1. EL PROBLEMA ============ -->
+<section id="problema" class="section section-light">
+  <div class="wrap">
+    <p class="section-tag">01 · El contexto</p>
+    <h2 class="section-title">Acceder a la salud en la comarca es una carrera contra el tiempo y la distancia.</h2>
+    <p class="section-intro">La Comarca Ngäbe Buglé enfrenta barreras geográficas, económicas, de personal médico y de infraestructura que dificultan la prevención y el diagnóstico temprano. Estos son algunos datos que dan forma al problema.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <span class="stat-num">B/. 80,00</span>
+        <span class="stat-label">Costo promedio de trasladar a un paciente hasta la instalación de salud más cercana.</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">3,3<span class="stat-unit"> / 10.000</span></span>
+        <span class="stat-label">Médicos y enfermeras por cada 10.000 habitantes, muy por debajo de los 25 recomendados para zonas de difícil acceso.</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">109</span>
+        <span class="stat-label">Instalaciones de salud registradas en 2022, en su mayoría puestos y subcentros de baja complejidad.</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">302,9<span class="stat-unit"> a </span>348,8</span>
+        <span class="stat-label">Muertes por cada 100.000 habitantes entre 2018 y 2022, muchas por causas infecciosas y crónicas prevenibles.</span>
+      </div>
+    </div>
+
+    <div class="problem-body">
+      <p>Llegar a un centro de salud puede implicar caminar, ir a caballo o pagar transporte durante varias horas, y a veces días. Para una familia, ese viaje representa un gasto difícil de sostener y, muchas veces, la razón por la que una consulta se posterga hasta que ya es urgente.</p>
+      <p>La escasez de personal y la infraestructura limitada completan el cuadro: cuando hay pocos profesionales disponibles y las distancias son largas, las señales tempranas de una enfermedad tienden a pasar desapercibidas. Frente a eso, este proyecto plantea un apoyo complementario para la orientación clínica inicial y la detección temprana, pensado siempre como un puente hacia el criterio médico, no como su reemplazo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. LA PROPUESTA ============ -->
+<section id="propuesta" class="section section-petrol">
+  <div class="wrap">
+    <p class="section-tag light">02 · La solución propuesta</p>
+    <h2 class="section-title light">Un kiosco de salud autónomo, capaz de operar donde no llega la red eléctrica ni la telefonía.</h2>
+    <p class="section-intro light">La idea central es reunir en una sola unidad todo lo necesario para una primera valoración: sensores, captura de voz e imagen, procesamiento local y un enlace satelital para hablar con un médico cuando el caso lo requiere. En la práctica, el kiosco puede:</p>
+
+    <div class="can-list">
+      <div class="can-item"><span class="can-dot" style="--c:var(--solar)"></span>Medir signos vitales como temperatura, saturación de oxígeno, frecuencia cardíaca y presión.</div>
+      <div class="can-item"><span class="can-dot" style="--c:var(--teal-bright)"></span>Escuchar los síntomas del paciente y transcribirlos a texto de forma automática.</div>
+      <div class="can-item"><span class="can-dot" style="--c:var(--clay)"></span>Tomar imágenes de la piel cuando hay una posible lesión que revisar.</div>
+      <div class="can-item"><span class="can-dot" style="--c:var(--leaf)"></span>Procesar toda la información en el propio kiosco, sin depender de una conexión constante.</div>
+      <div class="can-item"><span class="can-dot" style="--c:var(--solar)"></span>Generar una orientación clínica preliminar y comunicarla en pantalla y por voz.</div>
+      <div class="can-item"><span class="can-dot" style="--c:var(--teal-bright)"></span>Conectar al paciente con personal médico remoto mediante Starlink si hace falta.</div>
+    </div>
+
+    <h3 class="subhead light">Seis subsistemas que trabajan juntos</h3>
+    <div class="subsystem-grid">
+      <article class="subsys" style="--c:var(--solar)">
+        <span class="subsys-idx">01</span>
+        <h4>Suministro energético</h4>
+        <p>Paneles solares, controlador de carga y baterías de litio-hierro-fosfato mantienen el kiosco encendido sin red eléctrica.</p>
+      </article>
+      <article class="subsys" style="--c:var(--teal-bright)">
+        <span class="subsys-idx">02</span>
+        <h4>Conectividad satelital</h4>
+        <p>Un terminal Starlink y una red interna Wi-Fi 6 habilitan videoconsultas y comunicación remota donde no hay señal celular.</p>
+      </article>
+      <article class="subsys" style="--c:var(--indigo)">
+        <span class="subsys-idx">03</span>
+        <h4>Unidad de cómputo</h4>
+        <p>Un computador de borde de bajo consumo ejecuta localmente los modelos y guarda el historial clínico cifrado.</p>
+      </article>
+      <article class="subsys" style="--c:var(--clay)">
+        <span class="subsys-idx">04</span>
+        <h4>Sensores y captura clínica</h4>
+        <p>Sensores biométricos, un dermatoscopio y un micrófono recogen signos vitales, imágenes y la descripción del paciente.</p>
+      </article>
+      <article class="subsys" style="--c:var(--plum)">
+        <span class="subsys-idx">05</span>
+        <h4>Interfaz de usuario</h4>
+        <p>Pantalla táctil grande, altavoces y cámara frontal, pensados para personas con poca experiencia previa en dispositivos digitales.</p>
+      </article>
+      <article class="subsys" style="--c:var(--leaf)">
+        <span class="subsys-idx">06</span>
+        <h4>Software, LLMs y modelos especializados</h4>
+        <p>Modelos de lenguaje y de visión que analizan síntomas, clasifican imágenes de piel y transcriben la voz.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. MARCO TEÓRICO ============ -->
+<section id="marco" class="section section-light">
+  <div class="wrap">
+    <p class="section-tag">03 · Marco teórico</p>
+    <h2 class="section-title">Las ideas que sostienen el diseño, en lenguaje sencillo.</h2>
+    <p class="section-intro">Cada decisión del proyecto se apoya en investigaciones previas. Estas son las cinco bases conceptuales detrás del kiosco.</p>
+
+    <div class="theory-grid">
+      <article class="theory-card">
+        <h3>Modelos de lenguaje (LLMs) en salud</h3>
+        <p>Los modelos de lenguaje de gran escala pueden leer los síntomas descritos por una persona y ofrecer una orientación coherente con criterios clínicos. Ayudan a interpretar lo que el paciente cuenta, pero pueden equivocarse o inventar información, por lo que se usan como apoyo bajo supervisión y nunca como sustituto del médico.</p>
+      </article>
+      <article class="theory-card">
+        <h3>Sensores biométricos</h3>
+        <p>Miden de forma no invasiva señales del cuerpo como temperatura, oxígeno en sangre, frecuencia cardíaca, presión y respiración. Aportan datos objetivos que complementan lo que el paciente describe con palabras, y ayudan a detectar señales de alerta tempranas.</p>
+      </article>
+      <article class="theory-card">
+        <h3>Kioscos inteligentes de salud</h3>
+        <p>Son unidades autónomas que el propio usuario puede operar para recibir una orientación preliminar sin un médico presente. Ya existen experiencias en comunidades rurales, como un kiosco solar desplegado sin red eléctrica y otro de manejo nutricional que obtuvo una excelente calificación de usabilidad (89,17 sobre 100).</p>
+      </article>
+      <article class="theory-card">
+        <h3>Telemedicina y Starlink</h3>
+        <p>La telemedicina lleva la atención a personas alejadas de los centros de salud. En zonas sin infraestructura terrestre, la conexión satelital de baja latencia de Starlink permite sostener videoconsultas en tiempo real y activar protocolos de emergencia con médicos a distancia.</p>
+      </article>
+      <article class="theory-card theory-wide">
+        <h3>Energía solar</h3>
+        <p>En comunidades donde la red eléctrica es inexistente o inestable, la energía solar deja de ser un accesorio y se vuelve parte estructural del diseño. Paneles fotovoltaicos, un controlador con seguimiento del punto de máxima potencia (MPPT) y baterías LiFePO4 permiten mantener el sistema funcionando incluso en aislamiento.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. METODOLOGÍA Y MATERIALES ============ -->
+<section id="metodologia" class="section section-cream">
+  <div class="wrap">
+    <p class="section-tag">04 · Metodología y materiales</p>
+    <h2 class="section-title">Una investigación documental que termina en un diseño conceptual.</h2>
+    <p class="section-intro">El trabajo es de tipo documental o bibliográfico y de alcance descriptivo. No hubo implementación física ni validación en campo: la investigación caracteriza el problema y, a partir de ahí, propone una solución en el plano del diseño, sustentada en artículos científicos, reportes técnicos y fichas de componentes.</p>
+
+    <ol class="process">
+      <li class="process-step">
+        <span class="process-num">1</span>
+        <div><h4>Identificación del problema</h4><p>Revisión inicial del estado de la salud pública en zonas de difícil acceso, a partir de reportes oficiales y del contexto de la comarca.</p></div>
+      </li>
+      <li class="process-step">
+        <span class="process-num">2</span>
+        <div><h4>Revisión bibliográfica</h4><p>Búsqueda en IEEE Xplore, Google Scholar, arXiv y PubMed, con prioridad en fuentes revisadas por pares y fichas técnicas oficiales.</p></div>
+      </li>
+      <li class="process-step">
+        <span class="process-num">3</span>
+        <div><h4>Selección de tecnologías</h4><p>Evaluación de alternativas para cada componente según autonomía energética, operación con conectividad limitada y contexto rural.</p></div>
+      </li>
+      <li class="process-step">
+        <span class="process-num">4</span>
+        <div><h4>Diseño conceptual del sistema</h4><p>Integración de los seis subsistemas en una arquitectura coherente, pendiente de implementación física y validación.</p></div>
+      </li>
+    </ol>
+
+    <h3 class="subhead">Materiales y componentes por subsistema</h3>
+    <p class="section-intro small">Toca cada bloque para ver los componentes principales.</p>
+
+    <div class="accordion" id="materiales">
+      <div class="acc-item" style="--c:var(--solar)">
+        <button class="acc-head" aria-expanded="false">Suministro energético<span class="acc-icon" aria-hidden="true"></span></button>
+        <div class="acc-panel"><ul>
+          <li>Paneles solares fotovoltaicos de 300 a 400 W</li>
+          <li>Controlador de carga MPPT de 30 a 40 A</li>
+          <li>Baterías LiFePO4 de 12 V, 100 a 200 Ah</li>
+          <li>Cabina exterior con protección IP65</li>
+        </ul></div>
+      </div>
+      <div class="acc-item" style="--c:var(--teal-bright)">
+        <button class="acc-head" aria-expanded="false">Conectividad<span class="acc-icon" aria-hidden="true"></span></button>
+        <div class="acc-panel"><ul>
+          <li>Terminal Starlink con router integrado</li>
+          <li>Router Wi-Fi 6 de bajo consumo</li>
+        </ul></div>
+      </div>
+      <div class="acc-item" style="--c:var(--indigo)">
+        <button class="acc-head" aria-expanded="false">Unidad de cómputo<span class="acc-icon" aria-hidden="true"></span></button>
+        <div class="acc-panel"><ul>
+          <li>NVIDIA Jetson Orin Nano Super Developer Kit</li>
+          <li>SSD NVMe de 256 a 512 GB</li>
+        </ul></div>
+      </div>
+      <div class="acc-item" style="--c:var(--clay)">
+        <button class="acc-head" aria-expanded="false">Sensores y captura clínica<span class="acc-icon" aria-hidden="true"></span></button>
+        <div class="acc-panel"><ul>
+          <li>BITalino, para bioseñales como ECG, actividad electrodérmica y respiración</li>
+          <li>Sensor de temperatura infrarroja MLX90614</li>
+          <li>Módulo de presión arterial oscilométrico</li>
+          <li>Sensor de SpO2 y frecuencia cardíaca</li>
+          <li>Electrodos desechables Ag/AgCl</li>
+          <li>Dermatoscopio digital USB con luz polarizada</li>
+          <li>Micrófono cardioide con cancelación de ruido</li>
+        </ul></div>
+      </div>
+      <div class="acc-item" style="--c:var(--plum)">
+        <button class="acc-head" aria-expanded="false">Interfaz de usuario<span class="acc-icon" aria-hidden="true"></span></button>
+        <div class="acc-panel"><ul>
+          <li>Pantalla táctil capacitiva de 21.5 pulgadas</li>
+          <li>Altavoces resistentes a polvo y humedad</li>
+          <li>Cámara web frontal 1080p</li>
+        </ul></div>
+      </div>
+      <div class="acc-item" style="--c:var(--leaf)">
+        <button class="acc-head" aria-expanded="false">Software, LLMs y modelos especializados<span class="acc-icon" aria-hidden="true"></span></button>
+        <div class="acc-panel"><ul>
+          <li>BioMistral-7B, para el análisis de síntomas y datos clínicos estructurados</li>
+          <li>EfficientNet-B4, para la clasificación de imágenes dermatológicas</li>
+          <li>Whisper, para la transcripción de voz</li>
+          <li>TensorRT-LLM como motor de inferencia</li>
+          <li>Python 3.x para la orquestación del backend</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. DISEÑO Y FLUJO ============ -->
+<section id="funcionamiento" class="section section-light">
+  <div class="wrap">
+    <p class="section-tag">05 · Diseño y flujo</p>
+    <h2 class="section-title">Qué pasa, paso a paso, durante una consulta.</h2>
+    <p class="section-intro">Así viaja la información dentro del kiosco, desde que el paciente se acerca hasta que recibe una orientación preliminar. Ninguna etapa entrega un diagnóstico definitivo: el sistema reúne señales y las presenta como apoyo.</p>
+
+    <ol class="flow">
+      <li class="flow-step" style="--c:var(--clay)"><span class="flow-n">1</span><p>Los sensores biométricos capturan los signos vitales del paciente y los envían al computador de borde.</p></li>
+      <li class="flow-step" style="--c:var(--leaf)"><span class="flow-n">2</span><p>El paciente describe sus síntomas por voz a través del micrófono.</p></li>
+      <li class="flow-step" style="--c:var(--leaf)"><span class="flow-n">3</span><p>Whisper transcribe ese audio a texto en español.</p></li>
+      <li class="flow-step" style="--c:var(--clay)"><span class="flow-n">4</span><p>Si hay una posible lesión en la piel, el dermatoscopio toma la imagen y EfficientNet-B4 genera una etiqueta textual de apoyo.</p></li>
+      <li class="flow-step" style="--c:var(--clay)"><span class="flow-n">5</span><p>Si se reporta un problema ocular, la imagen se conserva como apoyo visual para la revisión médica remota, sin clasificarla de forma automática.</p></li>
+      <li class="flow-step" style="--c:var(--leaf)"><span class="flow-n">6</span><p>BioMistral-7B integra los síntomas transcritos, los signos vitales y, cuando aplica, la etiqueta del modelo de visión.</p></li>
+      <li class="flow-step" style="--c:var(--leaf)"><span class="flow-n">7</span><p>El sistema genera una orientación clínica preliminar.</p></li>
+      <li class="flow-step" style="--c:var(--plum)"><span class="flow-n">8</span><p>El resultado se muestra en pantalla y se reproduce por audio para el paciente.</p></li>
+      <li class="flow-step" style="--c:var(--teal-bright)"><span class="flow-n">9</span><p>Si el caso es crítico o requiere revisión médica, se activa una videoconsulta mediante Starlink.</p></li>
+      <li class="flow-step" style="--c:var(--indigo)"><span class="flow-n">10</span><p>El historial clínico se guarda de forma local y cifrada en el SSD del sistema.</p></li>
+    </ol>
+
+    <p class="callout">Nota importante: el kiosco no diagnostica de forma definitiva. Ofrece una <strong>orientación preliminar</strong>, apoya el <strong>diagnóstico temprano</strong>, ayuda a la <strong>detección de señales de alerta</strong> y funciona como <strong>herramienta complementaria</strong> del personal de salud.</p>
+  </div>
+</section>
+
+<!-- ============ 6. COMPARATIVA ============ -->
+<section id="comparativa" class="section section-cream">
+  <div class="wrap">
+    <p class="section-tag">06 · Comparativa de tecnologías</p>
+    <h2 class="section-title">Por qué se eligió cada tecnología frente a sus alternativas.</h2>
+    <p class="section-intro">Cada componente clave se seleccionó bajo tres criterios: autonomía energética, operación con conectividad intermitente y prudencia clínica. Estas son las decisiones principales.</p>
+
+    <div class="compare-grid">
+      <article class="compare-card">
+        <h4>Baterías LiFePO4 <span class="vs">frente a plomo-ácido</span></h4>
+        <p>Ofrecen entre 2.000 y 6.000 ciclos de carga frente a los 300 a 500 del plomo-ácido, con una vida útil de 10 a 15 años en lugar de 3 a 5. Requieren menos mantenimiento y toleran mejor el clima cálido y húmedo de la zona.</p>
+      </article>
+      <article class="compare-card">
+        <h4>Starlink <span class="vs">frente a satélite geoestacionario y 4G</span></h4>
+        <p>Su órbita baja da una latencia de 25 a 50 ms, frente a los 600 a 684 ms de los sistemas geoestacionarios. Además, no depende de infraestructura celular, inexistente en la comarca.</p>
+      </article>
+      <article class="compare-card">
+        <h4>Jetson Orin Nano Super <span class="vs">frente a Raspberry Pi 5 y mini-PC con GPU</span></h4>
+        <p>Opera entre 7 y 25 W, muchísimo menos que un mini-PC con GPU (150 a 350 W), y ofrece hasta 67 TOPS. La Raspberry Pi, sin GPU dedicada, no alcanza tiempos de respuesta aceptables.</p>
+      </article>
+      <article class="compare-card">
+        <h4>BioMistral-7B <span class="vs">frente a otros modelos y APIs externas</span></h4>
+        <p>Tiene evaluación multilingüe documentada que incluye el español y admite ejecución local en versión cuantizada, lo que reduce la dependencia de una conexión permanente a internet.</p>
+      </article>
+      <article class="compare-card">
+        <h4>EfficientNet-B4 <span class="vs">frente a MobileNet</span></h4>
+        <p>Alcanza 82,9% de precisión top-1 en ImageNet con 19 millones de parámetros, frente al 75,2% de MobileNetV3-Large con 5,4 millones. Se priorizó la precisión para reducir falsos negativos, aunque con mayor peso computacional.</p>
+      </article>
+      <article class="compare-card">
+        <h4>Whisper <span class="vs">frente a servicios de transcripción en la nube</span></h4>
+        <p>Funciona sin conexión y ofrece soporte nativo para el español, algo incompatible con servicios que exigen internet permanente.</p>
+      </article>
+      <article class="compare-card">
+        <h4>TensorRT-LLM <span class="vs">frente a llama.cpp u Ollama</span></h4>
+        <p>Aprovecha la GPU NVIDIA del Jetson mediante aceleración CUDA. Aun así, su ventaja concreta depende de la compatibilidad con el modelo y el formato de cuantización, algo que debe verificarse en la implementación.</p>
+      </article>
+      <article class="compare-card">
+        <h4>Python <span class="vs">frente a C++ o Java</span></h4>
+        <p>Concentra las principales librerías del proyecto y reduce el tiempo de integración. El cuello de botella real es la inferencia de los modelos, que ya se acelera por GPU.</p>
+      </article>
+      <article class="compare-card compare-note">
+        <h4>Sobre los sensores</h4>
+        <p>BITalino, MLX90614, el módulo de presión, el oxímetro y el dermatoscopio se eligieron por su relación costo-fiabilidad, pero todos requieren calibración y validación frente a equipos de referencia antes de cualquier uso clínico real.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. COSTOS Y VIABILIDAD ============ -->
+<section id="costos" class="section section-petrol">
+  <div class="wrap">
+    <p class="section-tag light">07 · Costos y viabilidad</p>
+    <h2 class="section-title light">Cuánto costaría y qué tan realista es, a nivel de diseño.</h2>
+    <p class="section-intro light">Los precios son referenciales, consultados en junio de 2026, y no constituyen una cotización formal. No incluyen instalación, logística, mantenimiento, capacitación ni validación clínica.</p>
+
+    <div class="cost-cards">
+      <div class="cost-card"><span class="cost-num">≈ 3.294 USD</span><span class="cost-label">Subtotal de hardware por kiosco</span></div>
+      <div class="cost-card"><span class="cost-num">≈ 3.623 USD</span><span class="cost-label">Total estimado con gabinete, cableado, conectores y montaje</span></div>
+      <div class="cost-card"><span class="cost-num">≈ 600 USD/año</span><span class="cost-label">Plan Starlink recurrente, alrededor de 50 USD al mes</span></div>
+    </div>
+
+    <div class="cost-split">
+      <div class="cost-bars">
+        <h4 class="light">Dónde se concentra la inversión</h4>
+        <div class="bar"><span class="bar-label">Baterías LiFePO4</span><span class="bar-track"><span class="bar-fill" style="width:100%;--c:var(--solar)"></span></span><span class="bar-val">700</span></div>
+        <div class="bar"><span class="bar-label">Terminal Starlink</span><span class="bar-track"><span class="bar-fill" style="width:54%;--c:var(--teal-bright)"></span></span><span class="bar-val">380</span></div>
+        <div class="bar"><span class="bar-label">Pantalla táctil 21.5"</span><span class="bar-track"><span class="bar-fill" style="width:50%;--c:var(--plum)"></span></span><span class="bar-val">350</span></div>
+        <div class="bar"><span class="bar-label">Paneles solares</span><span class="bar-track"><span class="bar-fill" style="width:43%;--c:var(--solar)"></span></span><span class="bar-val">300</span></div>
+        <div class="bar"><span class="bar-label">Jetson Orin Nano Super</span><span class="bar-track"><span class="bar-fill" style="width:36%;--c:var(--indigo)"></span></span><span class="bar-val">249</span></div>
+        <p class="bar-caption light">Cifras en USD. La energía y la conectividad concentran la mayor parte del costo; la unidad de cómputo dejó de ser la partida dominante.</p>
+      </div>
+
+      <div class="viability">
+        <h4 class="light">Viabilidad, con los pies en la tierra</h4>
+        <ul class="via-list">
+          <li>El diseño es técnicamente viable a nivel conceptual.</li>
+          <li>El consumo del computador de borde es bajo frente a un mini-PC con GPU.</li>
+          <li>El terminal Starlink es uno de los mayores consumidores eléctricos del sistema.</li>
+          <li>Falta un balance energético diario completo para confirmar la autonomía real.</li>
+          <li>La memoria de 8 GB del Jetson exige cuantización y una gestión cuidadosa de los modelos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. ALCANCE Y LIMITACIONES ============ -->
+<section id="alcance" class="section section-light">
+  <div class="wrap">
+    <p class="section-tag">08 · Hasta dónde llega la propuesta</p>
+    <h2 class="section-title">Lo que falta por validar antes de pensar en implementar.</h2>
+    <p class="section-intro">Ser honestos sobre los límites es parte del trabajo. Esto es lo que este proyecto todavía no resuelve y lo que debería venir después.</p>
+
+    <div class="limit-columns">
+      <div class="limit-col">
+        <h4>Lo que el proyecto es (y no es)</h4>
+        <ul class="check-list is-warn">
+          <li>Es una propuesta conceptual de diseño.</li>
+          <li>No se construyó un prototipo físico.</li>
+          <li>No se validó en campo.</li>
+          <li>No sustituye al médico ni entrega diagnósticos definitivos.</li>
+          <li>BioMistral-7B y cualquier LLM médico pueden generar errores o respuestas alucinadas.</li>
+        </ul>
+      </div>
+      <div class="limit-col">
+        <h4>Lo que debería venir después</h4>
+        <ul class="check-list is-next">
+          <li>Calibrar y comparar los sensores contra equipos de referencia clínica.</li>
+          <li>Validar las salidas del sistema junto a personal de salud.</li>
+          <li>Probarlo en una comunidad con acompañamiento médico.</li>
+          <li>Estudiar la aceptación comunitaria y la usabilidad real.</li>
+          <li>Calcular con precisión la autonomía energética antes de implementar.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. EQUIPO ============ -->
+<section id="equipo" class="section section-cream">
+  <div class="wrap">
+    <p class="section-tag">09 · Forma de trabajo del grupo</p>
+    <h2 class="section-title">Un proyecto escrito a varias manos.</h2>
+    <p class="section-intro">El equipo trabajó de forma colaborativa durante todo el desarrollo. Se organizaban en llamadas y usaban la edición simultánea de Word, lo que permitió que varios integrantes escribieran sobre el mismo documento al mismo tiempo. Aunque cada uno lideró ciertas secciones, la redacción y la corrección fueron un proceso conjunto: todos aportaron, revisaron y corrigieron el trabajo de sus compañeros.</p>
+
+    <div class="team-grid">
+      <article class="team-card">
+        <h3>Andrés Paredes</h3>
+        <p class="team-role">Introducción (Justificación, Objetivo, Delimitación), Marco Teórico, Costos, Resumen. Metodología en conjunto.</p>
+        <p class="team-quote">Este proyecto me ayudó a entender la importancia de desarrollar tecnología con un propósito social. Investigar la realidad de las comunidades rurales y sus dificultades para acceder a la salud me hizo valorar cómo la tecnología puede reducir esas brechas cuando se diseña pensando en las necesidades reales de las personas. Además, el proceso de investigación y redacción fortaleció habilidades que serán muy útiles en mi formación profesional.</p>
+      </article>
+      <article class="team-card">
+        <h3>Eric Núñez</h3>
+        <p class="team-role">Introducción (Problemática, Antecedentes), Conclusiones, Palabras Clave. Metodología en conjunto.</p>
+        <p class="team-quote">Durante este trabajo comprendí que una buena propuesta tecnológica necesita estar respaldada por evidencia e investigación sólida. Analizar tecnologías, comparar alternativas y justificar cada decisión me permitió entender mejor cómo se construye un proyecto con bases científicas. También reforzó la importancia del trabajo en equipo para integrar distintas ideas en un resultado más completo.</p>
+      </article>
+      <article class="team-card">
+        <h3>Mario González</h3>
+        <p class="team-role">Diseño del sistema y Comparativa de Tecnologías. Metodología en conjunto.</p>
+        <p class="team-quote">Elaborar este artículo me ayudó a ver que la innovación no consiste solo en crear tecnologías nuevas, sino en usarlas para resolver problemas reales. Investigar sobre el acceso a la salud en comunidades de difícil acceso me permitió conocer una realidad que muchas veces pasa desapercibida y fortaleció tanto mis conocimientos técnicos como mi capacidad para investigar y comunicar ideas con claridad.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. ÉTICA ============ -->
+<section id="etica" class="section section-light">
+  <div class="wrap">
+    <p class="section-tag">10 · Uso ético de LLMs y herramientas generativas</p>
+    <h2 class="section-title">Cómo se usaron las herramientas generativas en este proyecto.</h2>
+    <p class="section-intro">Durante el desarrollo se emplearon herramientas generativas como apoyo, nunca como sustituto de la revisión del equipo. Toda la información se revisó, corrigió y contrastó antes de integrarla al documento.</p>
+
+    <div class="ethic-split">
+      <div class="ethic-tools">
+        <h4>Herramientas utilizadas</h4>
+        <div class="tool-chip">ChatGPT</div>
+        <div class="tool-chip">Claude</div>
+        <h4 class="mt">Para qué se usaron</h4>
+        <ul class="dot-list">
+          <li>Obtener referencias bibliográficas.</li>
+          <li>Orientar la estructura del artículo.</li>
+          <li>Resumir y traducir artículos científicos o fragmentos relevantes.</li>
+          <li>Buscar materiales para comparar y seleccionar tecnologías.</li>
+          <li>Elaborar, con ChatGPT, el prompt entregado a Claude para generar este sitio de divulgación.</li>
+        </ul>
+      </div>
+
+      <div class="ethic-evidence">
+        <h4>Evidencia</h4>
+        <p class="section-intro small">Espacios reservados para capturas reales de los prompts y las iteraciones.</p>
+        <div class="evidence-gallery">
+          <figure class="evidence-ph"><div class="ph-box">Captura de conversación con ChatGPT</div></figure>
+          <figure class="evidence-ph"><div class="ph-box">Captura de conversación con Claude</div></figure>
+          <figure class="evidence-ph"><div class="ph-box">Iteración del prompt</div></figure>
+          <figure class="evidence-ph"><div class="ph-box">Revisión y corrección del contenido</div></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. BIBLIOGRAFÍA ============ -->
+<section id="bibliografia" class="section section-cream">
+  <div class="wrap">
+    <p class="section-tag">11 · Bibliografía breve</p>
+    <h2 class="section-title">Algunas fuentes clave.</h2>
+    <p class="section-intro">Selección de referencias que sustentan el problema, los modelos, los sensores, los kioscos y la conectividad. La lista completa se encuentra en el artículo original.</p>
+
+    <ol class="biblio">
+      <li>Ministerio de Salud de Panamá (MINSA), "Análisis de Situación de Salud de la Comarca Ngäbe Buglé: Resumen", Informe técnico, 2025.</li>
+      <li>Ministerio de Salud de Panamá (MINSA), "Perfil de Salud de los Territorios Indígenas de Panamá", Informe técnico, 2024.</li>
+      <li>K.-H. Jung, "Large Language Models in Medicine: Clinical Applications, Technical Challenges, and Ethical Considerations", <em>Healthc. Inform. Res.</em>, vol. 31, núm. 2, 2025.</li>
+      <li>Y. Labrak et al., "BioMistral: A Collection of Open-Source Pretrained Large Language Models for Medical Domains", 2024.</li>
+      <li>D. Batista et al., "Benchmarking of the BITalino biomedical toolkit against an established gold standard", <em>Healthc. Technol. Lett.</em>, vol. 6, núm. 2, 2019.</li>
+      <li>A. Amrutesh et al., "A Comprehensive Survey and Implementation of Health Kiosk Innovations", <em>IITCEE 2025</em>, 2025.</li>
+      <li>S. S. Setu et al., "A Novel Approach for a Smart IoMT-Based BAN Using Starlink", <em>BECITHCON</em>, 2025.</li>
+      <li>M. Tan y Q. V. Le, "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks", 2020.</li>
+      <li>A. Radford et al., "Robust Speech Recognition via Large-Scale Weak Supervision" (Whisper), 2022.</li>
+      <li>NVIDIA Corporation, "Jetson Orin Nano Super Developer Kit Datasheet" y "TensorRT-LLM", 2024.</li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER / CRÉDITOS ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="teeth-band small" aria-hidden="true"></div>
+      <p class="footer-title">Kiosco solar de salud para la Comarca Ngäbe Buglé</p>
+      <p class="footer-sub">Propuesta conceptual de apoyo al diagnóstico temprano. Herramienta complementaria, no sustituto del criterio médico.</p>
+    </div>
+    <div class="footer-credits">
+      <div class="credit-block">
+        <span class="credit-head">Autores</span>
+        <span>Andrés Paredes</span>
+        <span>Eric Núñez</span>
+        <span>Mario González</span>
+      </div>
+      <div class="credit-block">
+        <span class="credit-head">Asesoría</span>
+        <span>Prof. Marvin X. González</span>
+        <span class="credit-head mt">Correcciones</span>
+        <span>Rafael Cosme</span>
+      </div>
+      <div class="credit-block">
+        <span class="credit-head">Institución</span>
+        <span>Universidad Tecnológica de Panamá</span>
+        <span>Centro Regional de Veraguas</span>
+      </div>
+    </div>
+  </div>
+  <p class="footer-bottom">Sitio de divulgación del proyecto universitario. Los datos y cifras provienen del artículo original.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
