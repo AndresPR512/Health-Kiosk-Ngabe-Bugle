@@ -72,47 +72,68 @@
     </div>
 
     <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 340 360" class="kiosk-illustration" role="img">
-        <!-- sol -->
-        <circle cx="270" cy="66" r="30" fill="var(--solar)"></circle>
-        <g stroke="var(--solar)" stroke-width="4" stroke-linecap="round" opacity="0.9">
-          <line x1="270" y1="18" x2="270" y2="6"></line>
-          <line x1="270" y1="126" x2="270" y2="114"></line>
-          <line x1="318" y1="66" x2="330" y2="66"></line>
-          <line x1="210" y1="66" x2="222" y2="66"></line>
-          <line x1="304" y1="32" x2="313" y2="23"></line>
-          <line x1="227" y1="100" x2="236" y2="91"></line>
-          <line x1="304" y1="100" x2="313" y2="109"></line>
-          <line x1="227" y1="32" x2="236" y2="41"></line>
-        </g>
-        <!-- antena satelital -->
-        <g>
-          <line x1="60" y1="150" x2="60" y2="120" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"></line>
-          <ellipse cx="52" cy="112" rx="26" ry="15" fill="var(--teal)" transform="rotate(-24 52 112)"></ellipse>
-          <circle cx="52" cy="112" r="4" fill="var(--paper)"></circle>
-        </g>
-        <!-- panel solar -->
-        <g>
-          <rect x="150" y="96" width="118" height="66" rx="4" fill="var(--petrol)" transform="skewX(-8)"></rect>
-          <g stroke="var(--teal)" stroke-width="2" opacity="0.7" transform="skewX(-8)">
-            <line x1="150" y1="118" x2="268" y2="118"></line>
-            <line x1="150" y1="140" x2="268" y2="140"></line>
-            <line x1="180" y1="96" x2="180" y2="162"></line>
-            <line x1="210" y1="96" x2="210" y2="162"></line>
-            <line x1="240" y1="96" x2="240" y2="162"></line>
+      <svg viewBox="0 0 340 380" class="kiosk-illustration" role="img">
+        <defs>
+          <clipPath id="panelClip">
+            <polygon points="95,92 215,92 235,148 75,148"></polygon>
+          </clipPath>
+        </defs>
+
+        <g class="illustration-float">
+
+          <!-- sol: 8 rayos perfectamente simétricos alrededor del mismo centro -->
+          <g class="sun-group">
+            <g class="sun-rays">
+              <rect x="266" y="14" width="8" height="18" rx="4" transform="rotate(0 270 70)"></rect>
+              <rect x="266" y="14" width="8" height="18" rx="4" transform="rotate(45 270 70)"></rect>
+              <rect x="266" y="14" width="8" height="18" rx="4" transform="rotate(90 270 70)"></rect>
+              <rect x="266" y="14" width="8" height="18" rx="4" transform="rotate(135 270 70)"></rect>
+              <rect x="266" y="14" width="8" height="18" rx="4" transform="rotate(180 270 70)"></rect>
+              <rect x="266" y="14" width="8" height="18" rx="4" transform="rotate(225 270 70)"></rect>
+              <rect x="266" y="14" width="8" height="18" rx="4" transform="rotate(270 270 70)"></rect>
+              <rect x="266" y="14" width="8" height="18" rx="4" transform="rotate(315 270 70)"></rect>
+            </g>
+            <circle cx="270" cy="70" r="27" class="sun-core"></circle>
           </g>
-          <line x1="180" y1="162" x2="180" y2="188" stroke="var(--ink)" stroke-width="5"></line>
+
+          <!-- antena satelital -->
+          <g class="dish-group">
+            <line x1="250" y1="150" x2="250" y2="196" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"></line>
+            <ellipse cx="250" cy="140" rx="32" ry="15" transform="rotate(-22 250 140)" fill="var(--teal-bright)"></ellipse>
+            <ellipse cx="250" cy="140" rx="21" ry="8.5" transform="rotate(-22 250 140)" fill="var(--petrol)" opacity=".5"></ellipse>
+            <line x1="233" y1="122" x2="221" y2="102" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"></line>
+            <circle cx="221" cy="102" r="5" fill="var(--clay)"></circle>
+            <g class="signal-waves" fill="none" stroke="var(--clay)" stroke-width="2.4" stroke-linecap="round">
+              <path class="wave wave-1" d="M209 92 Q198 82 209 71"></path>
+              <path class="wave wave-2" d="M197 98 Q179 82 197 65"></path>
+            </g>
+          </g>
+
+          <!-- panel solar: trapecio con perspectiva y rejilla de celdas -->
+          <g class="panel-group">
+            <polygon points="95,92 215,92 235,148 75,148" fill="var(--indigo)"></polygon>
+            <line x1="135" y1="92" x2="128.3" y2="148" stroke="var(--teal-bright)" stroke-width="1.6" opacity=".55"></line>
+            <line x1="175" y1="92" x2="181.7" y2="148" stroke="var(--teal-bright)" stroke-width="1.6" opacity=".55"></line>
+            <line x1="85" y1="120" x2="225" y2="120" stroke="var(--teal-bright)" stroke-width="1.6" opacity=".55"></line>
+            <g clip-path="url(#panelClip)">
+              <rect class="panel-shine" x="-30" y="80" width="26" height="90" fill="#fff" opacity="0" transform="skewX(-20)"></rect>
+            </g>
+            <line x1="155" y1="148" x2="155" y2="196" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"></line>
+          </g>
+
+          <!-- cabina del kiosco -->
+          <g class="cabinet-group">
+            <rect x="110" y="196" width="140" height="168" rx="14" fill="var(--paper)" stroke="var(--ink)" stroke-width="3"></rect>
+            <rect x="126" y="212" width="108" height="90" rx="8" fill="var(--petrol)"></rect>
+            <polyline class="pulse-line" points="134,257 152,257 160,235 172,278 182,247 192,257 226,257" fill="none" stroke="var(--solar)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></polyline>
+            <circle cx="140" cy="322" r="6" fill="var(--clay)" class="status-dot"></circle>
+            <rect x="160" y="316" width="66" height="12" rx="6" fill="var(--paper-2)" stroke="var(--line)"></rect>
+            <!-- banda dientes ngäbe, en miniatura, como firma de marca -->
+            <polyline class="teeth-mini" points="122,346 132,336 142,346 152,336 162,346 172,336 182,346 192,336 202,346 212,336 222,346" fill="none" stroke="var(--clay)" stroke-width="3" stroke-linejoin="round"></polyline>
+          </g>
+
+          <rect x="98" y="364" width="164" height="12" rx="6" fill="var(--ink)"></rect>
         </g>
-        <!-- cabina del kiosco -->
-        <rect x="96" y="186" width="150" height="150" rx="10" fill="var(--paper-2)" stroke="var(--ink)" stroke-width="3"></rect>
-        <!-- pantalla -->
-        <rect x="116" y="206" width="110" height="72" rx="6" fill="var(--petrol)"></rect>
-        <path d="M126 258 l14 -20 l12 14 l16 -26 l14 22 l12 -10" fill="none" stroke="var(--solar)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
-        <circle cx="171" cy="222" r="5" fill="var(--clay)"></circle>
-        <!-- banda dientes ngäbe en la base -->
-        <path class="teeth" d="M108 300 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12 l10 -12 l10 12" fill="none" stroke="var(--clay)" stroke-width="3" stroke-linejoin="round"></path>
-        <rect x="120" y="312" width="46" height="16" rx="3" fill="var(--teal)"></rect>
-        <rect x="176" y="312" width="46" height="16" rx="3" fill="var(--solar)"></rect>
       </svg>
       <p class="hero-caption">Diagrama ilustrativo del concepto: energía solar, procesamiento local y enlace satelital en una sola unidad.</p>
     </div>
@@ -331,6 +352,11 @@
     <h2 class="section-title">Qué pasa, paso a paso, durante una consulta.</h2>
     <p class="section-intro">Así viaja la información dentro del kiosco, desde que el paciente se acerca hasta que recibe una orientación preliminar. Ninguna etapa entrega un diagnóstico definitivo: el sistema reúne señales y las presenta como apoyo.</p>
 
+    <figure class="design-figure">
+      <img src="img/diagrama-arquitectura.png" alt="Diagrama de la arquitectura del kiosco, con los seis subsistemas conectados entre sí, desde el suministro energético hasta la interfaz de usuario." loading="lazy">
+      <figcaption>Figura 1. Arquitectura propuesta del sistema de kiosco.</figcaption>
+    </figure>
+
     <ol class="flow">
       <li class="flow-step" style="--c:var(--clay)"><span class="flow-n">1</span><p>Los sensores biométricos capturan los signos vitales del paciente y los envían al computador de borde.</p></li>
       <li class="flow-step" style="--c:var(--leaf)"><span class="flow-n">2</span><p>El paciente describe sus síntomas por voz a través del micrófono.</p></li>
@@ -431,6 +457,12 @@
         </ul>
       </div>
     </div>
+
+    <div class="profit-card">
+      <span class="profit-tag">Pregunta frecuente</span>
+      <h4 class="light">¿Es rentable?</h4>
+      <p class="light">El estudio no calculó un retorno de inversión formal, así que la respuesta corta es que todavía no hay una cifra de rentabilidad confirmada. Dicho esto, si se compara el costo total estimado (≈3.623 USD) con lo que ya le cuesta a una familia cada viaje a un centro de salud (B/. 80,00), la inversión equivaldría, en números simples, a unos 45 traslados evitados. Para una comunidad, ese número se alcanza rápido. Esa cuenta no incluye el gasto recurrente de Starlink (≈600 USD al año) ni los costos de instalación, mantenimiento o capacitación, que también deben pesar en cualquier análisis real de rentabilidad.</p>
+    </div>
   </div>
 </section>
 
@@ -519,11 +551,460 @@
         <h4>Evidencia</h4>
         <p class="section-intro small">Espacios reservados para capturas reales de los prompts y las iteraciones.</p>
         <div class="evidence-gallery">
-          <figure class="evidence-ph"><div class="ph-box">Captura de conversación con ChatGPT</div></figure>
-          <figure class="evidence-ph"><div class="ph-box">Captura de conversación con Claude</div></figure>
-          <figure class="evidence-ph"><div class="ph-box">Iteración del prompt</div></figure>
-          <figure class="evidence-ph"><div class="ph-box">Revisión y corrección del contenido</div></figure>
+          <figure class="evidence-ph">
+            <img src="img/captura-chatgpt.png" alt="Captura de conversación con ChatGPT" loading="lazy">
+          </figure>
+          <figure class="evidence-ph">
+            <img src="img/captura-claude.png" alt="Captura de conversación con Claude" loading="lazy">
+          </figure>
         </div>
+
+        <button class="prompt-toggle" id="promptToggle" aria-expanded="false" aria-controls="promptPanel">
+          <span class="prompt-toggle-text">Ver el prompt que usamos</span>
+          <span class="prompt-toggle-icon" aria-hidden="true"></span>
+        </button>
+        <div class="prompt-panel" id="promptPanel">
+          <pre class="prompt-text">Quiero que actúes como desarrollador front-end y diseñador de contenido de divulgación científica. Vamos a construir un sitio web estático de una sola página para presentar un proyecto universitario a un público general, no especializado.
+
+El sitio será publicado en GitHub Pages, así que debe funcionar únicamente con HTML, CSS y JavaScript. No uses backend, frameworks con proceso de build ni dependencias que impidan abrir el sitio directamente desde un repositorio. Puedes usar CDN solo si realmente aporta algo y si el sitio sigue siendo fácil de desplegar.
+
+Te adjunto dos materiales de referencia:
+
+1. Un artículo científico en formato markdown, con el contenido completo del proyecto.
+2. Una imagen con el diseño propuesto / arquitectura del sistema.
+
+Usa ambos materiales como fuente principal. No copies el texto del artículo tal cual. Debes resumir, reorganizar y explicar la información de forma clara, visual y entendible para personas sin conocimientos técnicos. Sin embargo, no cambies el significado de las ideas, no inventes resultados, no exageres el alcance del sistema y no presentes la propuesta como si ya hubiera sido implementada o probada físicamente.
+
+## Tema del sitio
+
+El proyecto trata sobre una propuesta conceptual de un kiosco de salud inteligente, autónomo y alimentado con energía solar, orientado a apoyar el diagnóstico temprano de enfermedades en comunidades de difícil acceso de la Comarca Ngäbe Buglé, Panamá.
+
+El sistema integra:
+
+- Sensores biométricos para capturar signos vitales.
+- Captura de voz y transcripción automática.
+- Captura de imágenes dermatológicas y, cuando aplique, de superficie ocular.
+- Modelos de lenguaje de gran escala, especialmente BioMistral-7B, para analizar síntomas y datos clínicos estructurados.
+- Modelos de visión como EfficientNet-B4 para clasificación dermatológica.
+- Whisper para transcripción de voz.
+- Procesamiento local en un Jetson Orin Nano Super.
+- Conectividad satelital Starlink para videoconsultas y comunicación remota.
+- Energía solar con baterías LiFePO4 para operar en zonas sin red eléctrica estable.
+
+Importante: evita usar el término "IA" como etiqueta general. Donde el documento diga IA, cambia el enfoque a "LLMs", "modelos de lenguaje", "modelos de visión", "modelos de aprendizaje profundo" o "sistemas computacionales", según corresponda. La sección de uso ético también debe llamarse "Uso ético de LLMs y herramientas generativas", no "Uso ético de IA".
+
+## Enfoque de contenido
+
+El sitio debe basarse en el orden general del artículo original, pero adaptado a una página web. No es necesario incluir todas las subsecciones del paper de forma literal. Algunas pueden juntarse u omitirse, pero no se deben perder las partes importantes del proyecto.
+
+Partes obligatorias que deben aparecer de manera clara:
+
+- Contexto del problema en la Comarca Ngäbe Buglé.
+- Justificación de por qué se propone un kiosco de salud.
+- Marco teórico, explicado en lenguaje sencillo.
+- Metodología de la investigación.
+- Materiales y componentes del sistema.
+- Diseño propuesto / arquitectura del sistema.
+- Flujo de funcionamiento de una consulta.
+- Comparativa de tecnologías.
+- Costos / costes estimados.
+- Viabilidad, limitaciones y recomendaciones.
+- Forma de trabajo del grupo.
+- Uso ético de LLMs y herramientas generativas.
+- Créditos y bibliografía breve.
+
+## Estructura sugerida del sitio
+
+Crea una página única con navegación por anclas. Usa una estructura similar a esta:
+
+### 1. Portada / Hero
+
+Debe incluir:
+
+- Título del proyecto.
+- Una frase breve que explique el problema en lenguaje simple.
+- Una frase que deje claro que es una propuesta conceptual de apoyo al diagnóstico temprano, no un reemplazo del médico.
+- Un elemento visual: puede ser un SVG simple del kiosco, una tarjeta destacada o un diagrama pequeño.
+
+Ejemplo de enfoque, no copiar literalmente:
+
+"Un kiosco solar para acercar orientación médica inicial a comunidades donde llegar a un centro de salud puede tomar horas o días."
+
+### 2. El problema: acceso a salud en comunidades de difícil acceso
+
+Esta sección debe combinar, de forma resumida y entendible, la problemática, antecedentes, justificación, objetivo y delimitación del artículo.
+
+Debe explicar:
+
+- Que en la Comarca Ngäbe Buglé existen barreras geográficas, económicas, de personal médico e infraestructura.
+- Que llegar a un centro de salud puede implicar varias horas o días de traslado.
+- Que el traslado puede representar un costo promedio cercano a B/. 80,00 por paciente, según el documento.
+- Que la comarca cuenta con baja disponibilidad de personal de salud: aproximadamente 3,3 médicos y enfermeras por cada 10.000 habitantes, muy por debajo de la recomendación de 25 para zonas de difícil acceso.
+- Que entre 2018 y 2022 la mortalidad general se mantuvo elevada, entre 302,9 y 348,8 por cada 100.000 habitantes.
+- Que el sistema se propone como apoyo complementario para orientación clínica preliminar y detección temprana, no como sustituto del criterio médico.
+
+Usa lenguaje humano y claro. No conviertas esta sección en un bloque académico largo. Puedes usar tarjetas, datos destacados o una mini línea de tiempo del problema.
+
+### 3. La propuesta: un kiosco de salud autónomo
+
+Debe presentar la solución de forma visual.
+
+Explica que el proyecto propone un kiosco capaz de:
+
+- Medir signos vitales.
+- Escuchar los síntomas del paciente.
+- Transcribir la voz a texto.
+- Tomar imágenes dermatológicas cuando sea necesario.
+- Procesar la información localmente.
+- Generar una orientación preliminar.
+- Conectar al paciente con personal médico remoto mediante Starlink si el caso lo requiere.
+- Funcionar con energía solar.
+
+Incluye una representación visual de los seis subsistemas:
+
+1. Suministro energético.
+2. Conectividad satelital.
+3. Unidad de cómputo.
+4. Sensores y captura clínica.
+5. Interfaz de usuario.
+6. Software, LLMs y modelos especializados.
+
+Puedes hacer esto con tarjetas, iconos, un diagrama SVG o una combinación de ambos. Apóyate en la imagen de arquitectura adjunta.
+
+### 4. Marco teórico: ideas clave detrás del sistema
+
+Esta sección debe explicar la base conceptual del proyecto sin lenguaje pesado.
+
+Incluye subsecciones breves o tarjetas sobre:
+
+- LLMs en salud: qué hacen, por qué pueden apoyar la interpretación de síntomas y por qué no deben reemplazar al médico.
+- Sensores biométricos: qué signos vitales capturan y por qué ayudan a complementar lo que dice el paciente.
+- Kioscos inteligentes de salud: qué son y por qué pueden ser útiles en comunidades remotas.
+- Telemedicina y Starlink: cómo la conectividad satelital permite conectar con médicos a distancia.
+- Energía solar: por qué es esencial para un sistema pensado para lugares donde la red eléctrica puede ser inexistente o inestable.
+
+Evita explicar "inteligencia artificial" de forma genérica. Usa el término LLMs cuando hables de modelos de lenguaje, y usa "modelos de visión" o "modelos de aprendizaje profundo" cuando hables de EfficientNet-B4.
+
+### 5. Metodología y materiales
+
+Esta es una sección vital del proyecto. No la omitas.
+
+Debe explicar que la investigación fue:
+
+- Documental o bibliográfica.
+- De alcance descriptivo.
+- Sin implementación física ni validación en campo.
+- Basada en revisión de artículos científicos, reportes técnicos y fichas de componentes.
+
+Organiza esta sección como un proceso, por ejemplo:
+
+1. Identificación del problema.
+2. Revisión bibliográfica.
+3. Selección de tecnologías.
+4. Diseño conceptual del sistema.
+
+Incluye los materiales y componentes principales agrupados por subsistema:
+
+#### Suministro energético
+- Paneles solares fotovoltaicos de 300 a 400 W.
+- Controlador de carga MPPT de 30 a 40 A.
+- Baterías LiFePO4 de 12 V, 100 a 200 Ah.
+- Cabina exterior IP65.
+
+#### Conectividad
+- Terminal Starlink con router integrado.
+- Router Wi-Fi 6 de bajo consumo.
+
+#### Unidad de cómputo
+- NVIDIA Jetson Orin Nano Super Developer Kit.
+- SSD NVMe de 256 a 512 GB.
+
+#### Sensores y captura clínica
+- BITalino.
+- Sensor de temperatura infrarroja MLX90614.
+- Módulo de presión arterial oscilométrico.
+- Sensor de SpO2 y frecuencia cardíaca.
+- Electrodos Ag/AgCl.
+- Dermatoscopio digital USB polarizado.
+- Micrófono cardioide con cancelación de ruido.
+
+#### Interfaz de usuario
+- Pantalla táctil capacitiva de 21.5 pulgadas.
+- Altavoces resistentes a polvo y humedad.
+- Cámara web frontal 1080p.
+
+#### Software, LLMs y modelos especializados
+- BioMistral-7B para análisis de síntomas y datos clínicos estructurados.
+- EfficientNet-B4 para clasificación dermatológica.
+- Whisper para transcripción de voz.
+- TensorRT-LLM como motor de inferencia.
+- Python 3.x para orquestación del backend.
+
+Haz que esta sección sea fácil de leer. Puede estar en tarjetas o acordeones, pero no debe perder información.
+
+### 6. Diseño propuesto y flujo de funcionamiento
+
+Esta sección debe basarse en la arquitectura del sistema del documento y en la imagen adjunta.
+
+Incluye:
+
+- Un diagrama visual del flujo de datos.
+- Una explicación paso a paso de una consulta típica.
+
+El flujo debe conservar este significado:
+
+1. Los sensores capturan signos vitales y los envían al Jetson.
+2. El paciente describe sus síntomas por voz.
+3. Whisper transcribe la voz a texto.
+4. Si hay una posible lesión dermatológica, el dermatoscopio captura la imagen y EfficientNet-B4 genera una etiqueta textual de apoyo.
+5. Si se reporta un problema ocular, la imagen se conserva como apoyo visual para revisión médica remota, sin clasificarla automáticamente.
+6. BioMistral-7B integra síntomas, signos vitales y, si aplica, la etiqueta textual del modelo de visión.
+7. El sistema genera una orientación clínica preliminar.
+8. El resultado se muestra en pantalla y se reproduce por audio.
+9. Si el caso es crítico o requiere revisión médica, se activa una videoconsulta mediante Starlink.
+10. El historial se guarda localmente y cifrado en el SSD.
+
+No digas que el kiosco "diagnostica de forma definitiva". Usa expresiones como "orientación preliminar", "apoyo al diagnóstico temprano", "detección de señales de alerta" y "herramienta complementaria".
+
+### 7. Comparativa de tecnologías
+
+Esta sección también es vital. Debe explicar por qué se eligieron ciertas tecnologías frente a otras.
+
+No la conviertas en una tabla gigante imposible de leer. Puedes usar tarjetas comparativas, una tabla resumida o bloques tipo "se eligió X porque…".
+
+Incluye, como mínimo:
+
+- LiFePO4 frente a plomo-ácido: mayor vida útil, más ciclos, menos mantenimiento, mejor para zonas remotas.
+- Starlink frente a satélite geoestacionario y 4G: menor latencia y más viable donde no hay infraestructura celular.
+- Jetson Orin Nano Super frente a Raspberry Pi 5 y mini-PC con GPU: mejor balance entre rendimiento y bajo consumo.
+- BioMistral-7B frente a otros modelos o APIs externas: ejecución local, dominio biomédico y menor dependencia de internet.
+- EfficientNet-B4 frente a MobileNet: mayor precisión, aunque con más peso computacional.
+- Whisper frente a servicios de transcripción en la nube: puede funcionar sin conexión y soporta español.
+- TensorRT-LLM frente a alternativas como llama.cpp u Ollama: aceleración en GPU NVIDIA, aunque su ventaja debe validarse según compatibilidad.
+- Python frente a C++ o Java: mejor integración con librerías y menor tiempo de desarrollo.
+- Sensores elegidos: BITalino, MLX90614, presión arterial oscilométrica, SpO2 y dermatoscopio, destacando que requieren validación antes de uso clínico real.
+
+Mantén la comparativa fiel al documento. No inventes porcentajes ni datos que no estén en el artículo.
+
+### 8. Costos / costes estimados y viabilidad
+
+Esta sección debe incluir una tabla o tarjetas de costos resumidas.
+
+Debe quedar claro que:
+
+- El subtotal de hardware ronda los 3.294 USD.
+- El total estimado con gabinete, cableado, conectores y montaje ronda los 3.623 USD.
+- El costo recurrente del plan Starlink ronda los 50 USD mensuales, aproximadamente 600 USD al año.
+- Los precios son referenciales y fueron consultados en junio de 2026.
+- No son una cotización formal.
+- No se incluyen costos de instalación, logística, mantenimiento, capacitación ni validación clínica.
+
+Puedes agrupar los costos por subsistema en lugar de copiar toda la tabla completa del artículo. Sin embargo, conserva los montos principales y la idea central: energía y conectividad concentran gran parte de la inversión.
+
+También explica la viabilidad:
+
+- El diseño es técnicamente viable a nivel conceptual.
+- El consumo del Jetson es bajo en comparación con un mini-PC con GPU.
+- El terminal Starlink es uno de los mayores consumidores eléctricos.
+- Falta un balance energético diario completo para confirmar la autonomía real.
+- La memoria de 8 GB del Jetson exige cuantización y gestión cuidadosa de modelos.
+
+### 9. Alcance, limitaciones y recomendaciones
+
+Resume las conclusiones y recomendaciones del artículo en lenguaje directo.
+
+Debe aparecer claramente que:
+
+- El proyecto es una propuesta conceptual.
+- No se construyó un prototipo físico.
+- No se validó en campo.
+- Los sensores deben calibrarse y compararse con equipos de referencia clínica.
+- BioMistral-7B y cualquier LLM médico pueden generar errores o respuestas alucinadas.
+- El sistema no sustituye al médico.
+- Debe validarse con personal de salud.
+- Debe probarse en una comunidad con acompañamiento médico.
+- Debe estudiarse la aceptación comunitaria y la usabilidad real.
+- Debe calcularse con precisión la autonomía energética antes de implementar.
+
+Esta sección puede llamarse "Lo que falta por validar" o "Hasta dónde llega la propuesta", para que suene menos académico.
+
+### 10. Forma de trabajo del grupo
+
+Incluye esta sección de forma obligatoria. Puedes diseñarla como tarjetas de equipo o una sección narrativa corta.
+
+Usa esta información:
+
+#### Organización del grupo
+
+El equipo trabajó de forma colaborativa durante todo el desarrollo del proyecto. Cada integrante revisaba el trabajo de sus compañeros y se discutían mejoras y cambios en conjunto. Para organizarse, el grupo se reunía en llamadas y utilizaba la función de edición simultánea de Word, lo que permitió que varios integrantes trabajaran al mismo tiempo sobre el mismo documento. Aunque cada uno tuvo secciones específicas bajo su responsabilidad, el proceso de redacción y corrección fue conjunto.
+
+#### Distribución de responsabilidades
+
+Todos los integrantes participaron en el desarrollo de la metodología. El resto de las secciones se distribuyó de la siguiente manera:
+
+- Andrés Paredes: Introducción (Justificación, Objetivo, Delimitación), Marco Teórico, Resultados (Costos), Resumen.
+- Eric Núñez: Introducción (Problemática, Antecedentes), Conclusiones, Palabras Clave.
+- Mario González: Resultados (Diseño del Sistema, Comparativa de Tecnologías).
+
+Aclara que aunque cada integrante lideró ciertas secciones, el trabajo fue en gran parte colaborativo: todos aportaron, revisaron y corrigieron el contenido de las secciones de sus compañeros.
+
+#### Consideraciones finales individuales
+
+Incluye estas consideraciones finales, pero puedes pulirlas ligeramente para que se integren mejor al sitio sin cambiar su sentido.
+
+Andrés:
+Este proyecto me permitió comprender la importancia de desarrollar soluciones tecnológicas con un propósito social. Investigar la realidad de las comunidades rurales y analizar las dificultades que enfrentan para acceder a servicios de salud me hizo valorar cómo la tecnología puede contribuir a reducir estas brechas cuando se diseña pensando en las necesidades reales de las personas. Además, el proceso de búsqueda de información científica y de redacción del artículo fortaleció mis habilidades de investigación y análisis, conocimientos que considero serán de gran utilidad en mi formación profesional.
+
+Eric:
+Durante el desarrollo de este trabajo comprendí que una buena propuesta tecnológica necesita estar respaldada por evidencia y una investigación sólida. Analizar diferentes tecnologías, comparar alternativas y justificar cada decisión me permitió entender mejor cómo se construye un proyecto con bases científicas. También considero que este proyecto reforzó la importancia del trabajo en equipo para integrar distintas ideas y lograr un resultado más completo y bien fundamentado.
+
+Mario:
+La elaboración de este artículo me ayudó a ver que la innovación no consiste únicamente en crear nuevas tecnologías, sino en utilizarlas para resolver problemas reales que afectan a la sociedad. Investigar sobre el acceso a la atención médica en comunidades de difícil acceso me permitió conocer una realidad que muchas veces pasa desapercibida y reflexionar sobre el impacto positivo que pueden generar este tipo de propuestas. Sin duda, fue una experiencia que fortaleció tanto mis conocimientos técnicos como mi capacidad para investigar y comunicar ideas de manera clara.
+
+### 11. Uso ético de LLMs y herramientas generativas
+
+Esta sección es obligatoria. No la llames "Uso ético de IA".
+
+Incluye:
+
+#### Herramientas utilizadas
+
+- ChatGPT.
+- Claude.
+
+#### Propósito de uso
+
+Explica que ambas herramientas fueron utilizadas como apoyo en distintas etapas del proyecto. Se emplearon para obtener referencias bibliográficas, orientar la estructura del artículo, resumir y traducir artículos científicos o fragmentos relevantes, y realizar búsquedas generales de materiales para comparar y seleccionar tecnologías. También se utilizó ChatGPT para elaborar el prompt entregado a Claude con el objetivo de generar el sitio web de divulgación del proyecto.
+
+Aclara que las herramientas generativas fueron usadas como apoyo, no como sustituto de la revisión del equipo. El equipo revisó, corrigió y contrastó la información antes de integrarla al documento.
+
+#### Evidencia
+
+Deja una sección visual con placeholders para capturas de pantalla de los prompts y las iteraciones realizadas. Usa tarjetas o una galería con textos como:
+
+- "Captura de conversación con ChatGPT".
+- "Captura de conversación con Claude".
+- "Iteración del prompt".
+- "Revisión y corrección del contenido".
+
+Estos placeholders deben ser fáciles de reemplazar luego por imágenes reales.
+
+### 12. Bibliografía breve
+
+Incluye al final una sección de bibliografía corta con algunas fuentes importantes tomadas del artículo original. No hace falta poner las 27 referencias, pero sí varias fuentes clave que sustenten el problema, los LLMs, los sensores, los kioscos, la conectividad y los modelos usados.
+
+Puedes usar entre 6 y 10 referencias. Prioriza fuentes como:
+
+- MINSA, Análisis de Situación de Salud de la Comarca Ngäbe Buglé.
+- MINSA, Perfil de Salud de los Territorios Indígenas de Panamá.
+- Jung, "Large Language Models in Medicine".
+- Labrak et al., "BioMistral".
+- Batista et al., evaluación de BITalino.
+- Amrutesh et al., kioscos de salud.
+- Setu et al., monitoreo de salud con Starlink.
+- Tan y Le, EfficientNet.
+- Radford et al., Whisper.
+- NVIDIA, Jetson Orin Nano / TensorRT-LLM.
+
+No inventes datos bibliográficos. Extrae la información de la sección de referencias del markdown adjunto. Puedes presentarlas en formato sencillo tipo IEEE abreviado.
+
+### 13. Créditos / footer
+
+Incluye:
+
+- Andrés Paredes.
+- Eric Núñez.
+- Mario González.
+- Asesor: Prof. Marvin X. González.
+- Correcciones: Rafael Cosme.
+- Universidad Tecnológica de Panamá, Centro Regional de Veraguas.
+
+## Requisitos de diseño
+
+El sitio debe verse profesional, limpio y cuidado. No debe parecer una plantilla genérica.
+
+Usa una línea visual coherente con:
+
+- Salud.
+- Energía solar.
+- Comunidad rural.
+- Tecnología responsable.
+
+Sugerencias de estilo:
+
+- Paleta con verdes, azules suaves, blanco, tonos tierra y acentos cálidos tipo solar.
+- Tipografía legible.
+- Buen espaciado.
+- Tarjetas informativas.
+- Datos destacados.
+- Diagramas SVG sencillos.
+- Íconos funcionales, no decorativos.
+- Diseño responsive para celular.
+
+Evita:
+
+- Frases de relleno tipo "en un mundo cada vez más conectado".
+- Lenguaje demasiado académico.
+- Párrafos enormes.
+- Promesas exageradas.
+- Decir que el sistema cura, diagnostica definitivamente o reemplaza médicos.
+- Usar el término IA de forma general cuando corresponde hablar de LLMs o modelos especializados.
+- Guiones largos innecesarios.
+- Texto que suene genérico o claramente generado.
+
+## Requisitos de contenido
+
+El texto debe sonar como explicación humana de un proyecto universitario serio. Debe ser claro, pero no superficial.
+
+Cada sección debe resumir la información del artículo, manteniendo el significado técnico. Puedes simplificar términos complejos, pero debes conservar los datos importantes.
+
+Cuando aparezcan cifras relevantes, consérvalas con cuidado:
+
+- B/. 80,00 como costo promedio de traslado por paciente.
+- 109 instalaciones de salud registradas en 2022.
+- 3,3 médicos y enfermeras por cada 10.000 habitantes frente a una recomendación de 25.
+- Mortalidad general entre 302,9 y 348,8 por cada 100.000 habitantes entre 2018 y 2022.
+- Subtotal de hardware aproximado: 3.294 USD.
+- Total estimado aproximado con montaje: 3.623 USD.
+- Starlink: aproximadamente 50 USD mensuales / 600 USD anuales.
+- Jetson Orin Nano Super: 7 a 25 W, hasta 67 TOPS, 8 GB de memoria.
+- EfficientNet-B4: 82,9% top-1 en ImageNet y 19 millones de parámetros, según el documento.
+- MobileNetV3-Large: 75,2% top-1 y 5,4 millones de parámetros, según la comparativa del documento.
+
+Si no estás seguro de cómo resumir algo técnico, conserva el sentido prudente del documento. Es mejor decir "requiere validación" que exagerar.
+
+## Requisitos técnicos
+
+Genera el código completo organizado en tres archivos:
+
+- index.html
+- style.css
+- script.js
+
+El sitio debe incluir:
+
+- Navegación por anclas.
+- Menú responsive para móvil.
+- Botones o enlaces internos.
+- Secciones claramente identificables.
+- Buen uso de etiquetas semánticas HTML.
+- CSS bien organizado.
+- JavaScript solo si aporta interacción real, como menú móvil, animaciones simples o acordeones.
+- Comentarios mínimos y útiles.
+
+Todo debe quedar listo para subirlo a GitHub Pages sin instalación ni compilación.
+
+## Entregable esperado
+
+Devuélveme el contenido completo de los tres archivos:
+
+1. index.html
+2. style.css
+3. script.js
+
+No des una explicación larga antes del código. Solo una nota breve y luego los archivos completos.</pre>
+        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -537,8 +1018,6 @@
     <p class="section-intro">Selección de referencias que sustentan el problema, los modelos, los sensores, los kioscos y la conectividad. La lista completa se encuentra en el artículo original.</p>
 
     <ol class="biblio">
-      <li>Ministerio de Salud de Panamá (MINSA), "Análisis de Situación de Salud de la Comarca Ngäbe Buglé: Resumen", Informe técnico, 2025.</li>
-      <li>Ministerio de Salud de Panamá (MINSA), "Perfil de Salud de los Territorios Indígenas de Panamá", Informe técnico, 2024.</li>
       <li>K.-H. Jung, "Large Language Models in Medicine: Clinical Applications, Technical Challenges, and Ethical Considerations", <em>Healthc. Inform. Res.</em>, vol. 31, núm. 2, 2025.</li>
       <li>Y. Labrak et al., "BioMistral: A Collection of Open-Source Pretrained Large Language Models for Medical Domains", 2024.</li>
       <li>D. Batista et al., "Benchmarking of the BITalino biomedical toolkit against an established gold standard", <em>Healthc. Technol. Lett.</em>, vol. 6, núm. 2, 2019.</li>
@@ -546,7 +1025,9 @@
       <li>S. S. Setu et al., "A Novel Approach for a Smart IoMT-Based BAN Using Starlink", <em>BECITHCON</em>, 2025.</li>
       <li>M. Tan y Q. V. Le, "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks", 2020.</li>
       <li>A. Radford et al., "Robust Speech Recognition via Large-Scale Weak Supervision" (Whisper), 2022.</li>
-      <li>NVIDIA Corporation, "Jetson Orin Nano Super Developer Kit Datasheet" y "TensorRT-LLM", 2024.</li>
+      <li>A. İ. Kilci et al., "Artificial intelligence vs. emergency physicians: who diagnoses better?", <em>Rev. Assoc. Med. Bras.</em>, vol. 71, núm. 11, 2025.</li>
+      <li>P. Tschandl et al., "The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions", <em>Sci. Data</em>, vol. 5, núm. 1, 2018.</li>
+      <li>P. Dauenhauer et al., "Case Study of the Cheeba Solar Energy Kiosk", <em>IEEE GHTC</em>, 2025.</li>
     </ol>
   </div>
 </section>
@@ -583,6 +1064,11 @@
   </div>
   <p class="footer-bottom">Sitio de divulgación del proyecto universitario. Los datos y cifras provienen del artículo original.</p>
 </footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar imagen">&times;</button>
+  <img class="lightbox-img-full" id="lightboxImg" src="" alt="">
+</div>
 
 <script src="script.js"></script>
 </body>

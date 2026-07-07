@@ -74,6 +74,12 @@ a{color:inherit}
     linear-gradient(225deg,var(--solar) 25%,transparent 25%) -9px 0/18px 18px,
     var(--clay);
 }
+@media (prefers-reduced-motion:no-preference){
+  .teeth-band{animation:teethShift 7s linear infinite}
+  .teeth-band.small{animation:teethShiftSmall 7s linear infinite}
+  @keyframes teethShift{to{background-position:-42px 0, -42px 0, 0 0}}
+  @keyframes teethShiftSmall{to{background-position:-27px 0, -27px 0, 0 0}}
+}
 
 /* ---------- Header / Nav ---------- */
 .site-header{
@@ -94,13 +100,19 @@ a{color:inherit}
   list-style:none; display:flex; gap:.3rem; margin:0; padding:0; flex-wrap:wrap;
 }
 .nav-menu a{
-  text-decoration:none; font-size:.92rem; font-weight:500;
+  position:relative; text-decoration:none; font-size:.92rem; font-weight:500;
   padding:.45rem .7rem; border-radius:9px; color:var(--ink-soft);
   transition:background .2s,color .2s;
+}
+.nav-menu a::after{
+  content:""; position:absolute; left:.7rem; right:.7rem; bottom:.3rem; height:2px;
+  background:var(--clay); border-radius:2px; transform:scaleX(0); transform-origin:left;
+  transition:transform .25s ease;
 }
 .nav-menu a:hover,.nav-menu a:focus-visible,.nav-menu a.active{
   background:var(--paper-2); color:var(--petrol);
 }
+.nav-menu a:hover::after,.nav-menu a:focus-visible::after,.nav-menu a.active::after{transform:scaleX(1)}
 .nav-toggle{
   display:none; flex-direction:column; gap:5px; background:none; border:0;
   cursor:pointer; padding:.4rem;
@@ -156,11 +168,58 @@ a{color:inherit}
 .kiosk-illustration{width:100%; max-width:330px; filter:drop-shadow(0 20px 30px rgba(0,0,0,.28))}
 .hero-caption{font-size:.8rem; color:#a8c0bb; text-align:center; max-width:34ch; margin:0}
 
-/* firma animada */
-.teeth{stroke-dasharray:6 0}
+/* ---------- Ilustración del kiosco: piezas y color base ---------- */
+.sun-rays rect{fill:var(--solar)}
+.sun-core{fill:var(--solar)}
+.teeth-mini{opacity:.85}
+
+/* ---------- Ilustración del kiosco: animación ---------- */
 @media (prefers-reduced-motion:no-preference){
-  .kiosk-illustration circle:first-of-type{transform-origin:270px 66px; animation:pulse 5s ease-in-out infinite}
-  @keyframes pulse{0%,100%{opacity:.92}50%{opacity:1}}
+
+  /* flotación suave del conjunto completo */
+  .illustration-float{animation:float 6s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+  /* sol: núcleo respira, rayos titilan uno a uno */
+  .sun-core{transform-origin:270px 70px; animation:sunPulse 4.5s ease-in-out infinite}
+  @keyframes sunPulse{0%,100%{transform:scale(1); opacity:.95}50%{transform:scale(1.05); opacity:1}}
+
+  .sun-rays rect{animation:rayTwinkle 2.8s ease-in-out infinite}
+  .sun-rays rect:nth-child(1){animation-delay:0s}
+  .sun-rays rect:nth-child(2){animation-delay:.18s}
+  .sun-rays rect:nth-child(3){animation-delay:.36s}
+  .sun-rays rect:nth-child(4){animation-delay:.54s}
+  .sun-rays rect:nth-child(5){animation-delay:.72s}
+  .sun-rays rect:nth-child(6){animation-delay:.9s}
+  .sun-rays rect:nth-child(7){animation-delay:1.08s}
+  .sun-rays rect:nth-child(8){animation-delay:1.26s}
+  @keyframes rayTwinkle{0%,100%{opacity:.55}50%{opacity:1}}
+
+  /* antena: pulsos de señal saliendo del receptor */
+  .signal-waves .wave{opacity:0; animation:wavePulse 2.2s ease-out infinite}
+  .signal-waves .wave-2{animation-delay:.5s}
+  @keyframes wavePulse{
+    0%{opacity:0; transform:scale(.6) translate(2px,2px)}
+    30%{opacity:1}
+    100%{opacity:0; transform:scale(1.25) translate(-2px,-2px)}
+  }
+
+  /* panel: destello de luz cruzando la superficie */
+  .panel-shine{animation:panelShine 5s ease-in-out infinite}
+  @keyframes panelShine{
+    0%{opacity:0; transform:translateX(0) skewX(-20deg)}
+    6%{opacity:.45}
+    38%{opacity:0; transform:translateX(300px) skewX(-20deg)}
+    100%{opacity:0; transform:translateX(300px) skewX(-20deg)}
+  }
+
+  /* pantalla: trazo de pulso vital en movimiento continuo */
+  .pulse-line{stroke-dasharray:34 132; animation:pulseTravel 2.6s linear infinite}
+  @keyframes pulseTravel{to{stroke-dashoffset:-166}}
+
+  /* testigo de estado, parpadeo suave */
+  .status-dot{animation:dotBlink 2.2s ease-in-out infinite}
+  @keyframes dotBlink{0%,100%{opacity:1}50%{opacity:.3}}
 }
 
 /* ---------- Secciones base ---------- */
@@ -208,6 +267,15 @@ a{color:inherit}
 .can-list{display:grid; grid-template-columns:repeat(2,1fr); gap:.85rem 1.6rem; margin-bottom:1rem}
 .can-item{display:flex; align-items:flex-start; gap:.7rem; font-size:.98rem; color:#dbe8e3}
 .can-dot{width:12px; height:12px; border-radius:50%; background:var(--c); margin-top:.42rem; flex:none}
+@media (prefers-reduced-motion:no-preference){
+  .can-dot{animation:dotBreath 3.6s ease-in-out infinite}
+  .can-item:nth-child(2) .can-dot{animation-delay:.3s}
+  .can-item:nth-child(3) .can-dot{animation-delay:.6s}
+  .can-item:nth-child(4) .can-dot{animation-delay:.9s}
+  .can-item:nth-child(5) .can-dot{animation-delay:1.2s}
+  .can-item:nth-child(6) .can-dot{animation-delay:1.5s}
+  @keyframes dotBreath{0%,100%{transform:scale(1); opacity:.85}50%{transform:scale(1.25); opacity:1}}
+}
 
 .subsystem-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem}
 .subsys{
@@ -216,6 +284,13 @@ a{color:inherit}
   position:relative; transition:transform .2s, background .2s;
 }
 .subsys:hover{transform:translateY(-4px); background:rgba(255,255,255,.09)}
+
+.theory-card,.compare-card,.team-card,.process-step,.flow-step,.stat-card,.acc-item{
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.theory-card:hover,.compare-card:hover,.team-card:hover,.process-step:hover,.flow-step:hover,.stat-card:hover{
+  transform:translateY(-4px); box-shadow:var(--shadow);
+}
 .subsys-idx{font-family:var(--mono); font-size:.8rem; color:var(--c); font-weight:600}
 .subsys h4{color:#fff; font-size:1.16rem; font-weight:600; margin:.5rem 0 .6rem}
 .subsys p{font-size:.92rem; color:#c4d6d1; margin:0}
@@ -278,6 +353,28 @@ a{color:inherit}
   padding:1.3rem 1.5rem; font-size:1rem; max-width:70ch; box-shadow:var(--shadow);
 }
 .callout strong{color:var(--solar-soft)}
+.design-figure{
+  max-width:560px;
+  margin:0 auto 2.4rem;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  padding:1rem;
+  box-shadow:var(--shadow-soft);
+}
+.design-figure img{
+  display:block;
+  width:100%;
+  border-radius:12px;
+  cursor:zoom-in;
+}
+.design-figure figcaption{
+  margin-top:.8rem;
+  font-size:.85rem;
+  color:var(--ink-soft);
+  text-align:center;
+  font-family:var(--mono);
+}
 
 /* ---------- Comparativa ---------- */
 .compare-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem}
@@ -310,6 +407,17 @@ a{color:inherit}
 .via-list{list-style:none; margin:0; padding:0; display:grid; gap:.7rem}
 .via-list li{position:relative; padding-left:1.5rem; font-size:.94rem; color:#d6e3df}
 .via-list li::before{content:""; position:absolute; left:0; top:.5rem; width:8px; height:8px; border-radius:50%; background:var(--solar)}
+
+.profit-card{
+  margin-top:1.6rem; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
+  border-left:4px solid var(--solar); border-radius:var(--radius); padding:1.6rem 1.7rem;
+}
+.profit-tag{
+  font-family:var(--mono); font-size:.76rem; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--solar-soft); display:block; margin-bottom:.5rem;
+}
+.profit-card h4{font-size:1.3rem; font-weight:700; margin-bottom:.7rem}
+.profit-card p{margin:0; font-size:.95rem; max-width:78ch; color:#d3e2dd}
 
 /* ---------- Alcance ---------- */
 .limit-columns{display:grid; grid-template-columns:1fr 1fr; gap:1.4rem}
@@ -348,12 +456,52 @@ a{color:inherit}
 .dot-list li{position:relative; padding-left:1.4rem; font-size:.95rem; color:var(--ink-soft)}
 .dot-list li::before{content:""; position:absolute; left:0; top:.55rem; width:7px; height:7px; border-radius:50%; background:var(--clay)}
 .ethic-evidence h4{font-size:1.15rem; color:var(--petrol)}
-.evidence-gallery{display:grid; grid-template-columns:1fr 1fr; gap:.9rem}
-.evidence-ph{margin:0}
+.evidence-gallery{display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items:start}
+.evidence-ph{
+  margin:0; background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+  padding:.7rem; box-shadow:var(--shadow-soft);
+}
+.evidence-ph img{
+  display:block;
+  width:100%;
+  max-height:380px;
+  object-fit:contain;
+  border-radius:8px;
+  cursor:zoom-in;
+}
 .ph-box{
   border:2px dashed var(--line); border-radius:12px; background:#fff;
   aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; text-align:center;
   padding:1rem; font-size:.86rem; color:var(--ink-soft); font-family:var(--mono);
+}
+.prompt-toggle{
+  margin-top:1.4rem;
+  display:inline-flex; align-items:center; gap:.6rem;
+  background:var(--petrol); color:#fff; border:0; cursor:pointer;
+  font-family:var(--body); font-weight:600; font-size:.92rem;
+  padding:.75rem 1.2rem; border-radius:10px;
+  transition:background .2s;
+}
+.prompt-toggle:hover{background:var(--teal)}
+.prompt-toggle-icon{
+  width:9px; height:9px; border-right:2px solid #fff; border-bottom:2px solid #fff;
+  transform:rotate(45deg); transition:transform .25s; flex:none;
+}
+.prompt-toggle[aria-expanded="true"] .prompt-toggle-icon{transform:rotate(-135deg)}
+
+.prompt-panel{
+  max-height:0; overflow:hidden;
+  transition:max-height .4s ease;
+}
+.prompt-panel.open{max-height:480px; margin-top:1.1rem}
+
+.prompt-text{
+  background:var(--ink); color:#dbe8e3;
+  font-family:var(--mono); font-size:.8rem; line-height:1.65;
+  padding:1.4rem 1.5rem; border-radius:var(--radius);
+  white-space:pre-wrap; word-wrap:break-word;
+  max-height:420px; overflow-y:auto;
+  margin:0;
 }
 
 /* ---------- Bibliografía ---------- */
@@ -406,3 +554,20 @@ a{color:inherit}
   .bar{grid-template-columns:110px 1fr 40px}
   .hero h1{max-width:none}
 }
+
+.lightbox{
+  position:fixed; inset:0; background:rgba(10,20,19,.92);
+  display:flex; align-items:center; justify-content:center;
+  padding:2rem; z-index:300;
+  opacity:0; visibility:hidden; transition:opacity .25s ease;
+}
+.lightbox.open{opacity:1; visibility:visible}
+.lightbox-img-full{max-width:100%; max-height:100%; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox-close{
+  position:absolute; top:1.2rem; right:1.4rem;
+  background:rgba(255,255,255,.12); color:#fff; border:0; border-radius:50%;
+  width:42px; height:42px; font-size:1.6rem; line-height:1; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .2s;
+}
+.lightbox-close:hover{background:rgba(255,255,255,.24)}
